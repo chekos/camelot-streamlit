@@ -3,7 +3,7 @@ import camelot
 
 def process_pdf(pdf_bytes):
   with open("tmp.pdf", "wb") as file:
-    file.write(pdf_bytes)
+    file.write(pdf_bytes.read())
 
 def main():
     """Streamlit app testing camelot.py"""
