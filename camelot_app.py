@@ -2,7 +2,7 @@ import streamlit as st
 import camelot
 
 def process_pdf(pdf_bytes):
-  with open("tmp.pdf", "w") as file:
+  with open("tmp.pdf", "wb") as file:
     file.write(pdf_bytes)
 
 def main():
