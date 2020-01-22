@@ -7,10 +7,13 @@ def main():
     st.write("# Testing Camelot on Streamlit!")
 
     uploaded_file = st.file_uploader(label="Upload PDF with tables", type="pdf")
-    tables = camelot.read_pdf(uploaded_file)
+    if uploaded_file:
+      tables = camelot.read_pdf(uploaded_file)
     
-    for table in tables:
-      st.write(table.df)
+      for table in tables:
+        st.write(table.df)
+    else:
+      st.write("waiting")
 
 if __name__=="__main__":
     main()
