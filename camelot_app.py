@@ -13,7 +13,7 @@ def main():
     uploaded_file = st.file_uploader(label="Upload PDF with tables", type="pdf")
     if uploaded_file is not None:
       process_pdf(uploaded_file)
-      tables = camelot.read_pdf("tmp.pdf")
+      tables = camelot.read_pdf("tmp.pdf", pages="all")
     
       for table in tables:
         st.write(table.df)
