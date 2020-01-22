@@ -1,0 +1,9 @@
+name: camelot-streamlit
+channels:
+  - conda-forge
+dependencies:
+  - altair
+  - pandas
+  - pip
+  - pip:
+    - streamlit
