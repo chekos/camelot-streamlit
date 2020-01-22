@@ -1,6 +1,10 @@
 import streamlit as st
 import camelot
 
+def process_pdf(pdf_bytes):
+  with open("tmp.pdf", "wb") as file:
+    file.write(pdf_bytes)
+
 def main():
     """Streamlit app testing camelot.py"""
 
@@ -8,7 +12,8 @@ def main():
 
     uploaded_file = st.file_uploader(label="Upload PDF with tables", type="pdf")
     if uploaded_file is not None:
-      tables = camelot.read_pdf(uploaded_file)
+      process_pdf(uploaded_file)
+      tables = camelot.read_pdf("tmp.pdf")
     
       for table in tables:
         st.write(table.df)
