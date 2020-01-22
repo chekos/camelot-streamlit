@@ -7,7 +7,7 @@ def main():
     st.write("# Testing Camelot on Streamlit!")
 
     uploaded_file = st.file_uploader(label="Upload PDF with tables", type="pdf")
-    if uploaded_file:
+    if uploaded_file is not None:
       tables = camelot.read_pdf(uploaded_file)
     
       for table in tables:
