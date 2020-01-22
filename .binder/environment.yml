@@ -5,6 +5,7 @@ dependencies:
   - altair
   - pandas
   - camelot-py
+  - anaconda::opencv
   - pip
   - pip:
     - streamlit
