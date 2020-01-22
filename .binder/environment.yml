@@ -4,7 +4,7 @@ channels:
 dependencies:
   - altair
   - pandas
-  - camelot
+  - camelot-py
   - pip
   - pip:
     - streamlit
