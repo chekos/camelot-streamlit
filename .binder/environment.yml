@@ -6,6 +6,7 @@ dependencies:
   - pandas
   - camelot-py
   - anaconda::opencv
+  - ghostscript
   - pip
   - pip:
     - streamlit
