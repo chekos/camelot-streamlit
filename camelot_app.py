@@ -3,10 +3,13 @@ import camelot
 import base64
 import uuid
 
-
+@st.cache
 def process_pdf(pdf_bytes):
     with open("tmp.pdf", "wb") as file:
         file.write(pdf_bytes.read())
+      
+    tables = camelot.read_pdf("tmp.pdf", pages="all")
+    return tables
 
 
 def display_download_options(df):
@@ -32,8 +35,7 @@ def main():
 
     uploaded_file = st.file_uploader(label="Upload PDF with tables", type="pdf")
     if uploaded_file is not None:
-        process_pdf(uploaded_file)
-        tables = camelot.read_pdf("tmp.pdf", pages="all")
+        tables = process_pdf(uploaded_file)
 
         for table in tables:
             df = table.df
