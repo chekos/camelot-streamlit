@@ -21,6 +21,8 @@ def display_download_options(df):
     # Copy and paste way
     if st.checkbox("Copy + paste?", key=uuid.uuid1()):
         st.text_area(csv)
+    
+    return None
 
 
 def main():
